@@ -69,5 +69,150 @@ function renderRides(ridesArray) {
 
 window.addEventListener('DOMContentLoaded', function() {
   // YOUR CODE
+ 
+  let allridesButton = 
+  document.querySelector(`#all-filter`).addEventListener('click', async function (event) {
+    event.preventDefault()
+
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+    let json = await response.json()
+    //console.log(json)
+
+    document.querySelector(`.rides`).innerHTML = ''
+    renderRides(json)
+  }) 
+
+  let nooberpurpleButton = document.querySelector(`#noober-purple-filter`)
+  nooberpurpleButton.addEventListener(`click`, async function (event) {
+    console.log.apply(`nooberpurpleButton`)
+
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+    let json = await response.json()
+    //console.log(json)
+
+    document.querySelector(`.rides`).innerHTML = ''
+    let newArray = []
+
+    for (let i = 0; i < json.length; i++) {
+        let purpleRide = json[i]
+        //console.log(purpleRide)
+        let Service = levelOfService(purpleRide)
+        
+        if (Service == `Noober Purple`){
+        console.log(Service)
+          
+          newArray.push(purpleRide)
+
+        }}
+        //console.log(newArray)
+        renderRides(newArray)
+  })
+
+  let nooberpoolButton = document.querySelector(`#noober-pool-filter`)
+  nooberpoolButton.addEventListener(`click`, async function (event) {
+    console.log.apply(`nooberpoolButton`)
+
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+    let json = await response.json()
+    //console.log(json)
+
+    document.querySelector(`.rides`).innerHTML = ''
+    let newArray = []
+
+    for (let i = 0; i < json.length; i++) {
+        let poolRide = json[i]
+        //console.log(poolRide)
+        let Service = levelOfService(poolRide)
+        
+        if (Service == `Noober Pool`){
+        console.log(Service)
+          
+          newArray.push(poolRide)
+
+        }}
+        //console.log(newArray)
+        renderRides(newArray)
+  })
+   
+  let nooberxlButton = document.querySelector(`#noober-xl-filter`)
+  nooberxlButton.addEventListener(`click`, async function (event) {
+    console.log.apply(`nooberxlButton`)
+
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+    let json = await response.json()
+    //console.log(json)
+
+    document.querySelector(`.rides`).innerHTML = ''
+    let newArray = []
+
+    for (let i = 0; i < json.length; i++) {
+        let xlRide = json[i]
+        //console.log(XLRide)
+        let Service = levelOfService(xlRide)
+        
+        if (Service == `Noober XL`){
+        console.log(Service)
+          
+          newArray.push(xlRide)
+
+        }}
+        //console.log(newArray)
+        renderRides(newArray)
+  })
+
+  let nooberxButton = document.querySelector(`#noober-x-filter`)
+  nooberxButton.addEventListener(`click`, async function (event) {
+    console.log.apply(`nooberxButton`)
+
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+    let json = await response.json()
+    //console.log(json)
+
+    document.querySelector(`.rides`).innerHTML = ''
+    let newArray = []
+
+    for (let i = 0; i < json.length; i++) {
+        let xRide = json[i]
+        //console.log(XRide)
+        let Service = levelOfService(xRide)
+        
+        if (Service == `Noober X`){
+        console.log(Service)
+          
+          newArray.push(xRide)
+
+        }}
+        //console.log(newArray)
+        renderRides(newArray)
+  })
+
+
+  //  let days = json.forecast.forecastday // find the array within the data
+
+   // document.querySelector('.forecast').innerHTML = '' // clearing any existing forecast html from a previous click
+
+    //for (let i = 0; i < ride.length; i++) {
+      //let day = ride[i]
+    
+    
+    
+    
+      // console.log(day) // u///////////////
+
+
+
+  //let location = 'All Filter'
+   // let forecastHeader = document.querySelector('.forecast-header')
+    //forecastHeader.innerHTML = `${location} Forecast`
+  
+  //document.querySelector(`#myContent`).innerHTML = '' // replace html with string/text html
+
+  //document.querySelector(`#myContent`).insertAdjacentHTML(`beforeend`, 'CONTENT') // add html with new html CONTENT
+
+  //document.querySelector('#myContent').addEventListener('click', function (event) {
+    //event.preventDefault() // prevent what the button does by default
+    // a button has a click "event", do this function inside
+ 
+
 })
 
